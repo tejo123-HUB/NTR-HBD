@@ -1,0 +1,38 @@
+/** Local poster path helper — files in assets/posters/{slug}.jpg */
+const poster = (slug) => `assets/posters/${slug}.jpg`;
+
+/** Jr. NTR — complete lead filmography (fan tribute) */
+const MOVIES = [
+  { slug: "brahmarshi-viswamitra", title: "Brahmarshi Viswamitra", year: 1991, role: "Bharata", director: "N. T. Rama Rao", tags: [], poster: poster("brahmarshi-viswamitra"), note: "Child artist · NTR legacy begins" },
+  { slug: "ramayanam", title: "Ramayanam", year: 1997, role: "Lord Rama", director: "Gunasekhar", tags: [], poster: poster("ramayanam"), note: "Mythological classic" },
+  { slug: "ninnu-choodalani", title: "Ninnu Choodalani", year: 2001, role: "Venu Reddy", director: "V. R. Prasanth", tags: [], poster: poster("ninnu-choodalani"), note: "Adult debut" },
+  { slug: "student-no-1", title: "Student No. 1", year: 2001, role: "Aditya", director: "S. S. Rajamouli", tags: ["rajamouli", "blockbuster"], poster: poster("student-no-1"), note: "Rajamouli debut · Breakthrough" },
+  { slug: "subbu", title: "Subbu", year: 2001, role: "Bala Subramanyam", director: "A. Karunakaran", tags: [], poster: null, note: "" },
+  { slug: "aadi", title: "Aadi", year: 2002, role: "Aadi Kesava Reddy", director: "V. V. Vinayak", tags: ["blockbuster"], poster: poster("aadi"), note: "Nandi Special Jury Award" },
+  { slug: "allari-ramudu", title: "Allari Ramudu", year: 2002, role: "Ramakrishna", director: "B. Gopal", tags: [], poster: poster("allari-ramudu"), note: "" },
+  { slug: "naaga", title: "Naaga", year: 2003, role: "Nagaraju", director: "A. M. Rathnam", tags: [], poster: poster("naaga"), note: "" },
+  { slug: "simhadri", title: "Simhadri", year: 2003, role: "Simhadri / Singamalai", director: "S. S. Rajamouli", tags: ["rajamouli", "blockbuster"], poster: poster("simhadri"), note: "All-time mass blockbuster" },
+  { slug: "andhrawala", title: "Andhrawala", year: 2004, role: "Munna / Shankar", director: "Puri Jagannadh", tags: [], poster: poster("andhrawala"), note: "Dual role" },
+  { slug: "samba", title: "Samba", year: 2004, role: "Samba Shiva Naidu", director: "V. V. Vinayak", tags: [], poster: poster("samba"), note: "" },
+  { slug: "naa-alludu", title: "Naa Alludu", year: 2005, role: "Karthik", director: "A. Karunakaran", tags: [], poster: poster("naa-alludu"), note: "" },
+  { slug: "narasimhudu", title: "Narasimhudu", year: 2005, role: "Narasimhudu", director: "B. Gopal", tags: [], poster: poster("narasimhudu"), note: "" },
+  { slug: "ashok", title: "Ashok", year: 2006, role: "Ashok", director: "Surender Krishna", tags: [], poster: poster("ashok"), note: "" },
+  { slug: "rakhi", title: "Rakhi", year: 2006, role: "Ramakrishna", director: "Krishna Vamsi", tags: ["blockbuster"], poster: poster("rakhi"), note: "Powerful emotional drama" },
+  { slug: "yamadonga", title: "Yamadonga", year: 2007, role: "Raja", director: "S. S. Rajamouli", tags: ["rajamouli", "blockbuster"], poster: poster("yamadonga"), note: "Filmfare Best Actor" },
+  { slug: "kantri", title: "Kantri", year: 2008, role: "Kranthi", director: "Meher Ramesh", tags: [], poster: poster("kantri"), note: "" },
+  { slug: "adhurs", title: "Adhurs", year: 2010, role: "Narasimha", director: "V. V. Vinayak", tags: ["blockbuster"], poster: poster("adhurs"), note: "Dual role hit" },
+  { slug: "brindavanam", title: "Brindavanam", year: 2010, role: "Krishna", director: "Vamsi Paidipally", tags: ["blockbuster"], poster: poster("brindavanam"), note: "Family blockbuster" },
+  { slug: "oosaravelli", title: "Oosaravelli", year: 2011, role: "Tony", director: "Surender Krishna", tags: [], poster: poster("oosaravelli"), note: "" },
+  { slug: "dammu", title: "Dammu", year: 2012, role: "Raja Vijaya Dhwaja", director: "Boyapati Srinu", tags: [], poster: poster("dammu"), note: "" },
+  { slug: "baadshah", title: "Baadshah", year: 2013, role: "Baadshah", director: "Srinu Vaitla", tags: ["blockbuster"], poster: poster("baadshah"), note: "Entertainment king" },
+  { slug: "ramayya-vasthavayya", title: "Ramayya Vasthavayya", year: 2013, role: "Ramu", director: "Harish Shankar", tags: [], poster: poster("ramayya-vasthavayya"), note: "" },
+  { slug: "rabhasa", title: "Rabhasa", year: 2014, role: "Karthik Reddy", director: "Santosh Srinivas", tags: [], poster: poster("rabhasa"), note: "" },
+  { slug: "temper", title: "Temper", year: 2015, role: "Daya", director: "Puri Jagannadh", tags: ["blockbuster", "recent"], poster: poster("temper"), note: "Mass comeback" },
+  { slug: "nannaku-prematho", title: "Nannaku Prematho", year: 2016, role: "Abhiram", director: "Sukumar", tags: ["blockbuster", "recent"], poster: poster("nannaku-prematho"), note: "25th film milestone" },
+  { slug: "janatha-garage", title: "Janatha Garage", year: 2016, role: "Anand", director: "Koratala Siva", tags: ["blockbuster", "recent"], poster: poster("janatha-garage"), note: "2016 highest grosser" },
+  { slug: "jai-lava-kusa", title: "Jai Lava Kusa", year: 2017, role: "Jai / Lava / Kusa", director: "K. S. Ravindra", tags: ["blockbuster", "recent"], poster: poster("jai-lava-kusa"), note: "Triple role spectacle" },
+  { slug: "aravinda-sametha", title: "Aravinda Sametha Veera Raghava", year: 2018, role: "Veera Raghava", director: "Trivikram Srinivas", tags: ["blockbuster", "recent"], poster: poster("aravinda-sametha"), note: "₹165Cr+ blockbuster" },
+  { slug: "rrr", title: "RRR", year: 2022, role: "Komaram Bheem", director: "S. S. Rajamouli", tags: ["rajamouli", "blockbuster", "recent"], poster: poster("rrr"), note: "Oscar · Global phenomenon" },
+  { slug: "devara-part-1", title: "Devara Part 1", year: 2024, role: "Devara", director: "Koratala Siva", tags: ["blockbuster", "recent"], poster: poster("devara-part-1"), note: "Pan-India epic" },
+  { slug: "war-2", title: "War 2", year: 2025, role: "TBA", director: "Ayan Mukerji", tags: ["recent"], poster: poster("war-2"), note: "Hindi debut · Upcoming", upcoming: true },
+];
