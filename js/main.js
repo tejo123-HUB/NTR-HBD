@@ -190,6 +190,8 @@
 
   function initScrollAnimations() {
     gsap.utils.toArray("[data-reveal]").forEach((el) => {
+      if (el.closest(".quote-slider")) return;
+
       gsap.to(el, {
         scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none reverse" },
         opacity: 1,
@@ -259,11 +261,15 @@
 
     let current = 0;
     function goToQuote(index) {
-      quotes[current].classList.remove("active");
-      dotsContainer.children[current].classList.remove("active");
+      quotes.forEach((q, i) => {
+        q.classList.toggle("active", i === index);
+        q.style.opacity = "";
+        q.style.transform = "";
+      });
+      [...dotsContainer.children].forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
       current = index;
-      quotes[current].classList.add("active");
-      dotsContainer.children[current].classList.add("active");
     }
 
     setInterval(() => {

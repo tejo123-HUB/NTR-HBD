@@ -610,18 +610,31 @@ main { position: relative; z-index: 2; }
   max-width: 900px;
   margin: 0 auto;
 }
-.quote-slider { position: relative; min-height: 140px; }
+.quote-slider {
+  position: relative;
+  min-height: 11rem;
+  width: 100%;
+}
 .quote {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateY(12px);
+  margin: 0;
+  padding: 0 1rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s, transform 0.6s;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  z-index: 0;
 }
 .quote.active {
-  position: relative;
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 .quote p {
   font-family: var(--font-display);
