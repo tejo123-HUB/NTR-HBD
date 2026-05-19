@@ -34,5 +34,5 @@ const MOVIES = [
   { slug: "aravinda-sametha", title: "Aravinda Sametha Veera Raghava", year: 2018, role: "Veera Raghava", director: "Trivikram Srinivas", tags: ["blockbuster", "recent"], poster: poster("aravinda-sametha"), note: "₹165Cr+ blockbuster" },
   { slug: "rrr", title: "RRR", year: 2022, role: "Komaram Bheem", director: "S. S. Rajamouli", tags: ["rajamouli", "blockbuster", "recent"], poster: poster("rrr"), note: "Oscar · Global phenomenon" },
   { slug: "devara-part-1", title: "Devara Part 1", year: 2024, role: "Devara", director: "Koratala Siva", tags: ["blockbuster", "recent"], poster: poster("devara-part-1"), note: "Pan-India epic" },
-  { slug: "war-2", title: "War 2", year: 2025, role: "TBA", director: "Ayan Mukerji", tags: ["recent"], poster: poster("war-2"), note: "Hindi debut · Upcoming", upcoming: true },
+  { slug: "war-2", title: "War 2", year: 2025, role: "TBA", director: "Ayan Mukerji", tags: ["recent"], poster: poster("war-2"), note: "Hindi debut · YRF Spy Universe" },
 ];
